@@ -18,11 +18,17 @@ pip install keepass2-merger
 
 ## Usage
 
-```python
-from keepass2_merger import __version__
+Merge two KeePass databases interactively:
 
-print(__version__)
+```bash
+keepass2-merger /path/to/db1.kdbx /path/to/db2.kdbx /path/to/output.kdbx
 ```
+
+You will be prompted for both database passwords (securely via `getpass`) and then shown each change
+needed to merge new or updated groups/entries from the second file into the first. A full-screen curses
+UI is used to avoid leaving scrollback residue; press the on-screen keys to apply or skip each change.
+No deletions are performed; the tool recommends newer versions when conflicts arise. The recycle bin is
+ignored. Use `--no-curses` to fall back to a plain prompt UI.
 
 ## Contributing
 

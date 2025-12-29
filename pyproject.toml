@@ -15,7 +15,9 @@ classifiers = [
   "Operating System :: OS Independent",
 ]
 keywords = ["copier", "template", "python"]
-dependencies = []
+dependencies = [
+  "pykeepass>=4.0.3",
+]
 dynamic = ["version"]
 
 [project.optional-dependencies]
@@ -41,3 +43,6 @@ include = ["keepass2_merger*"]
 [tool.setuptools_scm]
 fallback_version = "0.0.0"
 local_scheme = "node-and-date"
+
+[project.scripts]
+keepass2-merger = "keepass2_merger.cli:main"
