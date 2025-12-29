@@ -34,3 +34,6 @@ htmlcov/
 .idea/
 *.swp
 *.swo
+
+# Sample data
+data/
